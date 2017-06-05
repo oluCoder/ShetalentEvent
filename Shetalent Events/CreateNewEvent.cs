@@ -319,7 +319,7 @@ namespace Shetalent_Events
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            eventPage.ShowDialog();
+            eventPage.ShowDialog(); 
             this.Close();
         }
 
