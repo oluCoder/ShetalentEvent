@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GridView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ShetalentEventData_1Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GridView" ReturnType="Collection(Model.GridView_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GridView_Result">
+          <Property Type="String" Name="LotNumber" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="EventType" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateTimeOfEvent" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="NumberOfGuest" Nullable="false" />
+          <Property Type="String" Name="Street" Nullable="false" MaxLength="70" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="States" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Zip" Nullable="false" MaxLength="25" />
+          <Property Type="Decimal" Name="SalesAmount" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="DateTimeBooked" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="Amountowed" Nullable="false" Precision="19" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ShetalentEventData_1Entities" >
+          <FunctionImportMapping FunctionImportName="GridView" FunctionName="Model.Store.GridView">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.GridView_Result">
+                <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateTimeOfEvent" ColumnName="DateTimeOfEvent" />
+                <ScalarProperty Name="NumberOfGuest" ColumnName="NumberOfGuest" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="States" ColumnName="States" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+                <ScalarProperty Name="DateTimeBooked" ColumnName="DateTimeBooked" />
+                <ScalarProperty Name="Amountowed" ColumnName="Amountowed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
